@@ -1,5 +1,5 @@
 {
-  "name": "define",
+  "name": "define-js",
   "version": "0.1.2",
   "description": "javascript inheritance like class-based languages",
   "main": "index.js",
