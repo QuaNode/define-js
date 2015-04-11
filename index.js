@@ -13,24 +13,34 @@ module.exports = function(getConstructor) {
             var sṵper = {};
             var constructor = getConstructor(function() {
 
-                var self = this;
-                if (typeof PrototypeConstructor === 'function') {
+                var args = arguments;
+                return {
 
-                    PrototypeConstructor.apply(self, arguments);
-                    sṵper.super = self.super;
-                    self.super = {
+                    self: function(that) {
 
-                        super: self.super
-                    };
-                    for (var property in self) {
+                        if (that) {
 
-                        if (self.hasOwnProperty(property) && typeof self[property] === 'function') {
+                            var self = that;
+                            if (typeof PrototypeConstructor === 'function') {
 
-                            self.super[property] = sṵper[property] = self[property].bind(self);
-                        }
+                                PrototypeConstructor.apply(self, args);
+                                sṵper.super = self.super;
+                                self.super = {
+
+                                    super: self.super
+                                };
+                                for (var property in self) {
+
+                                    if (self.hasOwnProperty(property) && typeof self[property] === 'function') {
+
+                                        self.super[property] = sṵper[property] = self[property].bind(self);
+                                    }
+                                }
+                            }
+                        } else console.log('missing passing this when calling self');
+                        return self;
                     }
                 }
-                return self;
             }, sṵper);
             if (typeof constructor !== 'function') throw new Error('Invalid constructor');
             return typeof PrototypeConstructor === 'function' ? {
