@@ -37,7 +37,7 @@ module.exports = function(getConstructor) {
                                         self.super[property] = sṵper[property] = self[property].bind(self);
                                     }
                                 }
-                            } else console.log('invalid this object');
+                            } else throw new Error('invalid this object');
                         }
                         return self;
                     }
