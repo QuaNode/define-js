@@ -1,7 +1,7 @@
 # definejs
 javascript inheritance like class-based languages
 
-    npm install definejs
+    npm install define
 
 ``` js
 
