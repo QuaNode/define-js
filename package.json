@@ -1,6 +1,6 @@
 {
   "name": "definejs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "javascript inheritance like class-based languages",
   "main": "index.js",
   "scripts": {
