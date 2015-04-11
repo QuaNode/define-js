@@ -1,11 +1,11 @@
 # definejs
 javascript inheritance like class-based languages
 
-    npm install define
+    npm install define-js
 
 ``` js
 
-var define = require('define');
+var define = require('define-js');
 
 var SuperFunction = function(value){ // super constructor
     
