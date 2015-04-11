@@ -14,14 +14,15 @@ module.exports = function(getConstructor) {
             var constructor = getConstructor(function() {
 
                 var args = arguments;
+                var self = this;
                 return {
 
                     self: function(that) {
 
-                        if (that) {
+                        self = that || self;
+                        if (typeof PrototypeConstructor === 'function') {
 
-                            var self = that;
-                            if (typeof PrototypeConstructor === 'function') {
+                            if (self instanceof PrototypeConstructor) {
 
                                 PrototypeConstructor.apply(self, args);
                                 sṵper.super = self.super;
@@ -36,8 +37,8 @@ module.exports = function(getConstructor) {
                                         self.super[property] = sṵper[property] = self[property].bind(self);
                                     }
                                 }
-                            }
-                        } else console.log('missing passing this when calling self');
+                            } else console.log('invalid this object');
+                        }
                         return self;
                     }
                 }
