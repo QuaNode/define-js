@@ -5,7 +5,7 @@ javascript inheritance like class-based languages
 
 ``` js
 
-var define = require('definejs');
+var define = require('define');
 
 var SuperFunction = function(value){ // super constructor
     
