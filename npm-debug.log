@@ -1,0 +1,95 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.1.6
+3 info using node@v0.10.33
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/ahmedragabaminomran/Desktop/definejs',
+7 silly cache add   type: 'directory' }
+8 verbose tar pack [ '/Users/ahmedragabaminomran/.npm/definejs/0.1.2/package.tgz',
+8 verbose tar pack   '/Users/ahmedragabaminomran/Desktop/definejs' ]
+9 verbose tarball /Users/ahmedragabaminomran/.npm/definejs/0.1.2/package.tgz
+10 verbose folder /Users/ahmedragabaminomran/Desktop/definejs
+11 info prepublish definejs@0.1.2
+12 verbose addLocalTarball adding from inside cache /Users/ahmedragabaminomran/.npm/definejs/0.1.2/package.tgz
+13 silly cache afterAdd definejs@0.1.2
+14 verbose afterAdd /Users/ahmedragabaminomran/.npm/definejs/0.1.2/package/package.json not in flight; writing
+15 verbose afterAdd /Users/ahmedragabaminomran/.npm/definejs/0.1.2/package/package.json written
+16 silly publish { name: 'definejs',
+16 silly publish   version: '0.1.2',
+16 silly publish   description: 'javascript inheritance like class-based languages',
+16 silly publish   main: 'index.js',
+16 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+16 silly publish   dependencies: { parseparams: 'latest' },
+16 silly publish   repository: { type: 'git', url: 'https://github.com/quaNode/definejs.git' },
+16 silly publish   keywords: [ 'define', 'inheritance', 'class', 'prototype' ],
+16 silly publish   author: { name: 'Ahmed Ragab' },
+16 silly publish   license: 'ISC',
+16 silly publish   bugs: { url: 'https://github.com/quaNode/definejs/issues' },
+16 silly publish   homepage: 'https://github.com/quaNode/definejs',
+16 silly publish   readme: '# definejs\njavascript inheritance like class-based languages\n\n    npm install definejs\n\n``` js\n\nvar define = require(\'definejs\');\n\nvar SuperFunction = function(value){ // super constructor\n    \n    var protectedIvar = value;\n    this.method = function(){\n        \n        return protectedIvar;\n    };\n};\n\nmodule.exports = define(function(init, sṵper){\n  \n  return function(value){ // your constructor\n    \n    var self = init(value).self(this); // initialize super function with arguments and this scope\n    //or var self = init.apply(this, arguments).self();\n    self.method = function (){ // override a method of super object \n      \n      sṵper.method(); \n    };\n  };\n})\n.extend(SuperFunction /*the function you want to inherit from*/)\n.parameters("Value" /*parameters to be passed when instantiating the prototype object*/);\n\n```\n\n',
+16 silly publish   readmeFilename: 'README.md',
+16 silly publish   gitHead: '1b916543df8a64954229c72cd5c46e83afb86915',
+16 silly publish   _id: 'definejs@0.1.2',
+16 silly publish   _shasum: '5e713048f5f1d59fddf3181f6d303deec6e83576',
+16 silly publish   _from: '.' }
+17 verbose mapToRegistry name definejs
+18 verbose mapToRegistry uri https://registry.npmjs.org/definejs
+19 verbose publish registryBase https://registry.npmjs.org/
+20 verbose request on initialization, where is /definejs
+21 verbose request after pass 1, where is /definejs
+22 verbose request url raw /definejs
+23 verbose request resolving registry [ 'https://registry.npmjs.org/', './definejs' ]
+24 verbose request after pass 2, where is https://registry.npmjs.org/definejs
+25 verbose request sending authorization for write operation
+26 info attempt registry request try #1 at 17:43:23
+27 verbose request using bearer token for auth
+28 verbose request id 70e06c4272697d1f
+29 http request PUT https://registry.npmjs.org/definejs
+30 http 404 https://registry.npmjs.org/definejs
+31 verbose headers { date: 'Sat, 11 Apr 2015 15:43:25 GMT',
+31 verbose headers   server: 'Apache',
+31 verbose headers   'content-type': 'application/json',
+31 verbose headers   'cache-control': 'max-age=0',
+31 verbose headers   'content-length': '21',
+31 verbose headers   'accept-ranges': 'bytes',
+31 verbose headers   via: '1.1 varnish',
+31 verbose headers   'x-served-by': 'cache-lhr6333-LHR',
+31 verbose headers   'x-cache': 'MISS',
+31 verbose headers   'x-cache-hits': '0',
+31 verbose headers   'x-timer': 'S1428767004.762619,VS0,VE681',
+31 verbose headers   'keep-alive': 'timeout=10, max=50',
+31 verbose headers   connection: 'Keep-Alive' }
+32 error publish Failed PUT 404
+33 verbose stack Error: Not found : definejs
+33 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:260:14)
+33 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:197:65)
+33 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:364:22)
+33 verbose stack     at Request.emit (events.js:98:17)
+33 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1318:14)
+33 verbose stack     at Request.emit (events.js:117:20)
+33 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1266:12)
+33 verbose stack     at IncomingMessage.emit (events.js:117:20)
+33 verbose stack     at _stream_readable.js:943:16
+33 verbose stack     at process._tickCallback (node.js:419:13)
+34 verbose statusCode 404
+35 verbose pkgid definejs
+36 verbose cwd /Users/ahmedragabaminomran/Desktop/definejs
+37 error Darwin 14.1.0
+38 error argv "node" "/usr/local/bin/npm" "publish"
+39 error node v0.10.33
+40 error npm  v2.1.6
+41 error code E404
+42 error 404 Not found : definejs
+42 error 404
+42 error 404 'definejs' is not in the npm registry.
+42 error 404 You should bug the author to publish it (or use the name yourself!)
+42 error 404
+42 error 404 Note that you can also install from a
+42 error 404 tarball, folder, http url, or git url.
+43 verbose exit [ 1, true ]
