@@ -1,12 +1,12 @@
 {
   "name": "define-js",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "javascript inheritance like class-based languages",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "peerDependencies": {
+  "dependencies": {
     "parseparams": "latest"
   },
   "repository": {
