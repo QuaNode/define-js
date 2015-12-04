@@ -41,12 +41,12 @@ module.exports = function(getConstructor) {
                         }
                         return self;
                     }
-                }
+                };
             }, sṵper);
             if (typeof constructor !== 'function') throw new Error('Invalid constructor');
             return typeof PrototypeConstructor === 'function' ? {
 
-                parameters: function() {
+                defaults: function() {
 
                     if (arguments.length > 0) {
 
