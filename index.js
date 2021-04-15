@@ -44,24 +44,26 @@ module.exports = function(getConstructor) {
                 };
             }, sṵper);
             if (typeof constructor !== 'function') throw new Error('Invalid constructor');
+            var defaults = function() {
+
+                if (arguments.length > 0) {
+
+                    var args = Array.prototype.slice.call(arguments);
+                    args.unshift(null);
+                    var BindedPrototypeConstructor = Function.prototype.bind.apply(PrototypeConstructor, args);
+                    BindedPrototypeConstructor.prototype = PrototypeConstructor.prototype;
+                    constructor.prototype = new BindedPrototypeConstructor();
+                } else {
+
+                    constructor.prototype = new PrototypeConstructor();
+                }
+                constructor.prototype.constructor = constructor;
+                return constructor;
+            };
             return typeof PrototypeConstructor === 'function' ? {
 
-                defaults: function() {
-
-                    if (arguments.length > 0) {
-
-                        var args = Array.prototype.slice.call(arguments);
-                        args.unshift(null);
-                        var BindedPrototypeConstructor = Function.prototype.bind.apply(PrototypeConstructor, args);
-                        BindedPrototypeConstructor.prototype = PrototypeConstructor.prototype;
-                        constructor.prototype = new BindedPrototypeConstructor();
-                    } else {
-
-                        constructor.prototype = new PrototypeConstructor();
-                    }
-                    constructor.prototype.constructor = constructor;
-                    return constructor;
-                },
+                parameters: defaults,
+                defaults: defaults,
                 constructor: constructor
             } : constructor;
         }
