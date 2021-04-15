@@ -1,4 +1,4 @@
-# definejs
+# define-js
 javascript inheritance like class-based languages
 
 ## Installation
