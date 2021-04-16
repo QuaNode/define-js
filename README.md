@@ -33,7 +33,7 @@ module.exports = define(function(init, sṵper){
   };
 })
 .extend(SuperFunction /*the function you want to inherit from*/)
-.parameters("Value" /*parameters to be passed when instantiating the prototype object*/);
+.defaults("Value" /*defaults to be passed when instantiating the prototype object*/);
 
 ```
 
