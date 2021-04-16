@@ -1,5 +1,5 @@
 # define-js
-javascript inheritance like class-based languages
+ES5 inheritance like class-based languages
 
 ## Installation
 
